@@ -1,0 +1,80 @@
+//
+//  LoseViewController.swift
+//  ColorSwitch
+//
+//  Created by Zachary Elia on 10/28/17.
+//  Copyright © 2017 Zachary Elia. All rights reserved.
+//
+
+import UIKit
+import StoreKit
+
+class LoseViewController: UIViewController {
+    
+    @IBOutlet var buttonsView: UIView!
+    @IBOutlet var lossLabel: UILabel!
+    @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet var highScoreLabel: UILabel!
+    
+    @IBOutlet var playAgainButton: UIButton!
+    @IBOutlet var modeButton: UIButton!
+    @IBOutlet var menuButton: UIButton!
+
+    var game: Game!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        view.backgroundColor = Color.primaryColor
+        
+        buttonsView.backgroundColor = .clear
+        
+        lossLabel.text = game.lossMessage
+        scoreLabel.text = "Score: \(game.score)".uppercased()
+        highScoreLabel.text = "\(game.mode!) High Score: \(game.high!)".uppercased()
+        
+        for button in [playAgainButton, modeButton, menuButton] {
+            button?.backgroundColor = Color.secondaryColor
+            button?.layer.cornerRadius = UI.cornerRadius
+        }
+        
+        let mode = UserDefaults.standard.string(forKey: "mode")!
+        modeButton.setTitle(mode.uppercased(), for: .normal)
+
+        let gamesPlayed = UserDefaults.standard.integer(forKey: "gamesPlayed") + 1
+        UserDefaults.standard.set(gamesPlayed, forKey: "gamesPlayed")
+
+        game.submitHighScore()
+        game.submitAchievements()
+
+        if gamesPlayed % 4 == 0 && gamesPlayed != 0 {
+            // TODO: Show ads
+        }
+        else if gamesPlayed > 30 {
+            if #available(iOS 10.3, *) {
+                SKStoreReviewController.requestReview()
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func tappedPlayAgain(_ sender: Any) {
+        UIBuilder.play(sound: "tap")
+    }
+    
+    @IBAction func tappedMode(_ sender: Any) {
+        UIBuilder.play(sound: "tap")
+        UIBuilder.changeMode(currentButton: modeButton, currentView: view, buttonsView: buttonsView)
+    }
+    
+    @IBAction func tappedMenu(_ sender: Any) {
+        UIBuilder.play(sound: "tap")
+    }
+}
+

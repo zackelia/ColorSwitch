@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B648C1481FCB38B400E9DE49 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B648C1471FCB38B400E9DE49 /* Keys.swift */; };
 		B6B3CF021F9D77380033F399 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B3CF011F9D77380033F399 /* AppDelegate.swift */; };
 		B6B3CF041F9D77380033F399 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B3CF031F9D77380033F399 /* ViewController.swift */; };
 		B6B3CF071F9D77380033F399 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6B3CF051F9D77380033F399 /* Main.storyboard */; };
@@ -14,6 +15,12 @@
 		B6B3CF0C1F9D77380033F399 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6B3CF0A1F9D77380033F399 /* LaunchScreen.storyboard */; };
 		B6B3CF171F9D77380033F399 /* ColorSwitchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B3CF161F9D77380033F399 /* ColorSwitchTests.swift */; };
 		B6B3CF221F9D77380033F399 /* ColorSwitchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B3CF211F9D77380033F399 /* ColorSwitchUITests.swift */; };
+		B6B3CF301F9D79680033F399 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B3CF2F1F9D79680033F399 /* Constants.swift */; };
+		B6B3CF321F9EBD6B0033F399 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B3CF311F9EBD6B0033F399 /* MenuViewController.swift */; };
+		B6B3CF341F9EC52B0033F399 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B3CF331F9EC52B0033F399 /* GameViewController.swift */; };
+		B6B3CF361F9FF1780033F399 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B3CF351F9FF1780033F399 /* UI.swift */; };
+		B6E0C8721FA4DA1B00429295 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E0C8711FA4DA1B00429295 /* Game.swift */; };
+		B6E0C8741FA5190500429295 /* LoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E0C8731FA5190500429295 /* LoseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B648C1471FCB38B400E9DE49 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		B6B3CEFE1F9D77380033F399 /* ColorSwitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorSwitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6B3CF011F9D77380033F399 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6B3CF031F9D77380033F399 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +55,12 @@
 		B6B3CF1D1F9D77380033F399 /* ColorSwitchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorSwitchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6B3CF211F9D77380033F399 /* ColorSwitchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSwitchUITests.swift; sourceTree = "<group>"; };
 		B6B3CF231F9D77380033F399 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6B3CF2F1F9D79680033F399 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B6B3CF311F9EBD6B0033F399 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		B6B3CF331F9EC52B0033F399 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		B6B3CF351F9FF1780033F399 /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
+		B6E0C8711FA4DA1B00429295 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		B6E0C8731FA5190500429295 /* LoseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +95,7 @@
 				B6B3CF151F9D77380033F399 /* ColorSwitchTests */,
 				B6B3CF201F9D77380033F399 /* ColorSwitchUITests */,
 				B6B3CEFF1F9D77380033F399 /* Products */,
+				B6BEA40A1FA6776200550CF7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,8 +114,15 @@
 			children = (
 				B6B3CF011F9D77380033F399 /* AppDelegate.swift */,
 				B6B3CF031F9D77380033F399 /* ViewController.swift */,
+				B6B3CF311F9EBD6B0033F399 /* MenuViewController.swift */,
+				B6B3CF331F9EC52B0033F399 /* GameViewController.swift */,
+				B6E0C8731FA5190500429295 /* LoseViewController.swift */,
 				B6B3CF051F9D77380033F399 /* Main.storyboard */,
 				B6B3CF081F9D77380033F399 /* Assets.xcassets */,
+				B6E0C8711FA4DA1B00429295 /* Game.swift */,
+				B6B3CF351F9FF1780033F399 /* UI.swift */,
+				B6B3CF2F1F9D79680033F399 /* Constants.swift */,
+				B648C1471FCB38B400E9DE49 /* Keys.swift */,
 				B6B3CF0A1F9D77380033F399 /* LaunchScreen.storyboard */,
 				B6B3CF0D1F9D77380033F399 /* Info.plist */,
 			);
@@ -123,6 +145,13 @@
 				B6B3CF231F9D77380033F399 /* Info.plist */,
 			);
 			path = ColorSwitchUITests;
+			sourceTree = "<group>";
+		};
+		B6BEA40A1FA6776200550CF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,7 +222,13 @@
 				TargetAttributes = {
 					B6B3CEFD1F9D77380033F399 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
 					};
 					B6B3CF111F9D77380033F399 = {
 						CreatedOnToolsVersion = 9.1;
@@ -259,8 +294,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6B3CF341F9EC52B0033F399 /* GameViewController.swift in Sources */,
 				B6B3CF041F9D77380033F399 /* ViewController.swift in Sources */,
+				B6E0C8721FA4DA1B00429295 /* Game.swift in Sources */,
 				B6B3CF021F9D77380033F399 /* AppDelegate.swift in Sources */,
+				B6B3CF301F9D79680033F399 /* Constants.swift in Sources */,
+				B6E0C8741FA5190500429295 /* LoseViewController.swift in Sources */,
+				B6B3CF321F9EBD6B0033F399 /* MenuViewController.swift in Sources */,
+				B648C1481FCB38B400E9DE49 /* Keys.swift in Sources */,
+				B6B3CF361F9FF1780033F399 /* UI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,12 +468,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = M79N6W63A8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ColorSwitch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ZacharyElia.ColorSwitch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -441,12 +493,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = M79N6W63A8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ColorSwitch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ZacharyElia.ColorSwitch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
