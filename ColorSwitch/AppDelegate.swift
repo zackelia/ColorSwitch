@@ -50,6 +50,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    @available(iOS 9.0, *)
+    func application(_ application: UIApplication,
+                     performActionFor shortcutItem: UIApplicationShortcutItem,
+                     completionHandler: @escaping (Bool) -> Void) {
 
+        completionHandler(handleShortcut(shortcutItem: shortcutItem))
+    }
+
+    @available(iOS 9.0, *)
+    private func handleShortcut(shortcutItem: UIApplicationShortcutItem) -> Bool {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "game")
+
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
+        return true
+    }
+
+    
 }
 
