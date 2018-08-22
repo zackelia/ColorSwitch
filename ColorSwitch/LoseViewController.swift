@@ -48,7 +48,12 @@ class LoseViewController: UIViewController {
         game.submitAchievements()
 
         if gamesPlayed % 4 == 0 && gamesPlayed != 0 {
-            // TODO: Show ads
+            if Chartboost.hasInterstitial(CBLocationHomeScreen) {
+                Chartboost.showInterstitial(CBLocationHomeScreen)
+            }
+            else {
+                Chartboost.cacheInterstitial(CBLocationHomeScreen)
+            }
         }
         else if gamesPlayed > 30 {
             SKStoreReviewController.requestReview()
