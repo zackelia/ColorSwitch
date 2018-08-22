@@ -99,7 +99,7 @@ class MenuViewController: UIViewController {
     
     @IBAction func tappedMode(_ sender: Any) {
         UIBuilder.play(sound: "tap")
-        UIBuilder.changeMode(currentButton: modeButton, currentView: view, buttonsView: buttonsView)
+        UIBuilder.changeMode(currentButton: modeButton, currentView: view, buttonsView: buttonsView, sizeClass: self.traitCollection.horizontalSizeClass)
     }
     
     @IBAction func tappedRate(_ sender: Any) {

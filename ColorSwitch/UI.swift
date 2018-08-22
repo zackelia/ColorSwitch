@@ -38,7 +38,7 @@ struct UIBuilder {
         })
     }
 
-    static func changeMode(currentButton: UIButton, currentView: UIView, buttonsView: UIView){
+    static func changeMode(currentButton: UIButton, currentView: UIView, buttonsView: UIView, sizeClass: UIUserInterfaceSizeClass){
         let tempButton = UIButton(frame: currentButton.frame)
         tempButton.backgroundColor = Color.secondaryColor
         tempButton.layer.cornerRadius = UI.cornerRadius
@@ -57,8 +57,13 @@ struct UIBuilder {
         }
         
         UserDefaults.standard.set(newMode, forKey: "mode")
-        
-        let attributes = [ NSAttributedString.Key.font: UIFont(name: "Futura", size: 30.0)!,
+
+        var size: CGFloat = 30.0
+        if sizeClass == UIUserInterfaceSizeClass.regular {
+            size = 50.0
+        }
+
+        let attributes = [ NSAttributedString.Key.font: UIFont(name: "Futura", size: size)!,
                            NSAttributedString.Key.foregroundColor: UIColor.white ]
         let attributedString = NSAttributedString(string: currentMode.uppercased(), attributes: attributes)
         tempButton.setAttributedTitle(attributedString, for: UIControl.State.normal)
