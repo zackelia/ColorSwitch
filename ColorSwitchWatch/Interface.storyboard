@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13770" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch42" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13756"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc">
+                    <items>
+                        <group width="1" alignment="center" verticalAlignment="center" layout="vertical" id="IkE-jA-Y4n">
+                            <items>
+                                <label alignment="center" text="ColorSwitch!" textAlignment="center" id="eRA-hf-EzM">
+                                    <fontDescription key="font" type="system" pointSize="23"/>
+                                </label>
+                                <separator alignment="left" alpha="0.0" id="0ZL-yA-bu9"/>
+                                <separator alignment="left" alpha="0.0" id="jPb-OX-Jld"/>
+                                <button width="0.90000000000000002" alignment="center" title="START" id="412-Ei-7WH">
+                                    <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <segue destination="dfk-rx-7Yb" kind="push" id="VtL-yg-svD"/>
+                                    </connections>
+                                </button>
+                                <separator alignment="center" alpha="0.0" id="7gy-Uu-yLk">
+                                    <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </separator>
+                                <button width="0.90000000000000002" alignment="center" title="RELAXED" id="I8B-FO-ox1">
+                                    <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </button>
+                                <separator alignment="left" alpha="0.0" id="j2g-na-nJf"/>
+                                <separator alignment="left" alpha="0.0" id="v0H-pL-tdZ"/>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-62" y="29"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="Tlc-gJ-3NW">
+            <objects>
+                <controller id="dfk-rx-7Yb" customClass="InterfaceController" customModule="ColorSwitchWatch" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" id="K8O-DQ-c9i">
+                            <items>
+                                <label alignment="left" text="color" id="vRr-Xj-AWS"/>
+                                <label alignment="right" text="SCORE: 0" id="KXv-sB-mXL"/>
+                            </items>
+                        </group>
+                        <group width="150" height="150" alignment="center" layout="vertical" spacing="2" id="qC3-Hp-2TX">
+                            <items>
+                                <group width="1" height="0.5" alignment="left" id="ejd-9l-din">
+                                    <items>
+                                        <button width="0.5" height="1" alignment="center" id="Fmo-5y-eQZ">
+                                            <color key="backgroundColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="tappedRed" destination="dfk-rx-7Yb" id="0ki-Mv-bY9"/>
+                                            </connections>
+                                        </button>
+                                        <button width="0.5" height="1" alignment="center" id="jMH-e8-TyY">
+                                            <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="tappedBlue" destination="dfk-rx-7Yb" id="lWv-nn-gaQ"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                                <group width="1" height="0.5" alignment="left" id="PE1-DX-djx">
+                                    <items>
+                                        <button width="0.5" height="1" alignment="center" id="qkR-Mv-FlC">
+                                            <color key="backgroundColor" red="0.29803921568627451" green="0.85098039215686272" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="tappedGreen" destination="dfk-rx-7Yb" id="Iz3-hA-S0s"/>
+                                            </connections>
+                                        </button>
+                                        <button width="0.5" height="1" alignment="center" id="3qp-Kc-aY0">
+                                            <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="tappedYellow" destination="dfk-rx-7Yb" id="GuR-HD-l0r"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                            </items>
+                            <variation key="device=watch38mm" height="134" width="134"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="blueButton" destination="jMH-e8-TyY" id="3C3-vg-zqj"/>
+                        <outlet property="greenButton" destination="qkR-Mv-FlC" id="zJy-PX-tCv"/>
+                        <outlet property="redButton" destination="Fmo-5y-eQZ" id="LE8-5u-PAb"/>
+                        <outlet property="scoreLabel" destination="KXv-sB-mXL" id="lzw-pe-HzT"/>
+                        <outlet property="wordLabel" destination="vRr-Xj-AWS" id="rzO-vS-Xe1"/>
+                        <outlet property="yellowButton" destination="3qp-Kc-aY0" id="io2-td-3WZ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="307" y="29"/>
+        </scene>
+    </scenes>
+</document>

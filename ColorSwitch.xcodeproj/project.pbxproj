@@ -15,6 +15,14 @@
 		149C5F5D212CE24C00958E3E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 149C5F5C212CE24C00958E3E /* CoreGraphics.framework */; };
 		149C5F5F212CE25200958E3E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 149C5F5E212CE25200958E3E /* UIKit.framework */; };
 		149C5F61212CE25600958E3E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 149C5F60212CE25600958E3E /* WebKit.framework */; };
+		14C35D63212DAC89009FA2A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14C35D62212DAC89009FA2A3 /* Assets.xcassets */; };
+		14C35D6A212DAC89009FA2A3 /* ColorSwitchWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 14C35D69212DAC89009FA2A3 /* ColorSwitchWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		14C35D6F212DAC89009FA2A3 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C35D6E212DAC89009FA2A3 /* InterfaceController.swift */; };
+		14C35D71212DAC89009FA2A3 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C35D70212DAC89009FA2A3 /* ExtensionDelegate.swift */; };
+		14C35D73212DAC8A009FA2A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14C35D72212DAC8A009FA2A3 /* Assets.xcassets */; };
+		14C35D77212DAC8A009FA2A3 /* ColorSwitchWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 14C35D5D212DAC88009FA2A3 /* ColorSwitchWatch.app */; };
+		14ED3582212DAE0E005F61E7 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14ED3581212DAE0E005F61E7 /* Interface.storyboard */; };
+		14ED3584212DB524005F61E7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14ED3583212DB524005F61E7 /* Constants.swift */; };
 		B6B3CF021F9D77380033F399 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B3CF011F9D77380033F399 /* AppDelegate.swift */; };
 		B6B3CF071F9D77380033F399 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6B3CF051F9D77380033F399 /* Main.storyboard */; };
 		B6B3CF091F9D77380033F399 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6B3CF081F9D77380033F399 /* Assets.xcassets */; };
@@ -30,6 +38,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		14C35D6B212DAC89009FA2A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6B3CEF61F9D77380033F399 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14C35D68212DAC89009FA2A3;
+			remoteInfo = "ColorSwitchWatch Extension";
+		};
+		14C35D75212DAC8A009FA2A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6B3CEF61F9D77380033F399 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14C35D5C212DAC88009FA2A3;
+			remoteInfo = ColorSwitchWatch;
+		};
 		B6B3CF131F9D77380033F399 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B6B3CEF61F9D77380033F399 /* Project object */;
@@ -46,6 +68,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		14C35D7D212DAC8A009FA2A3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				14C35D6A212DAC89009FA2A3 /* ColorSwitchWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14C35D7F212DAC8A009FA2A3 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				14C35D77212DAC8A009FA2A3 /* ColorSwitchWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1495A611212CEEBE00B3F6FC /* ColorSwitch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ColorSwitch-Bridging-Header.h"; sourceTree = "<group>"; };
 		1495A621212CF0C400B3F6FC /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
@@ -56,6 +103,16 @@
 		149C5F5C212CE24C00958E3E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		149C5F5E212CE25200958E3E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		149C5F60212CE25600958E3E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		14C35D5D212DAC88009FA2A3 /* ColorSwitchWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorSwitchWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		14C35D62212DAC89009FA2A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		14C35D64212DAC89009FA2A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14C35D69212DAC89009FA2A3 /* ColorSwitchWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ColorSwitchWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14C35D6E212DAC89009FA2A3 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		14C35D70212DAC89009FA2A3 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		14C35D72212DAC8A009FA2A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		14C35D74212DAC8A009FA2A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14ED3581212DAE0E005F61E7 /* Interface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
+		14ED3583212DB524005F61E7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B6B3CEFE1F9D77380033F399 /* ColorSwitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorSwitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6B3CF011F9D77380033F399 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6B3CF061F9D77380033F399 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,6 +134,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		14C35D66212DAC89009FA2A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6B3CEFB1F9D77380033F399 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -117,12 +181,36 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
+		14C35D5E212DAC88009FA2A3 /* ColorSwitchWatch */ = {
+			isa = PBXGroup;
+			children = (
+				14ED3581212DAE0E005F61E7 /* Interface.storyboard */,
+				14C35D62212DAC89009FA2A3 /* Assets.xcassets */,
+				14C35D64212DAC89009FA2A3 /* Info.plist */,
+			);
+			path = ColorSwitchWatch;
+			sourceTree = "<group>";
+		};
+		14C35D6D212DAC89009FA2A3 /* ColorSwitchWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				14C35D6E212DAC89009FA2A3 /* InterfaceController.swift */,
+				14C35D70212DAC89009FA2A3 /* ExtensionDelegate.swift */,
+				14C35D72212DAC8A009FA2A3 /* Assets.xcassets */,
+				14ED3583212DB524005F61E7 /* Constants.swift */,
+				14C35D74212DAC8A009FA2A3 /* Info.plist */,
+			);
+			path = "ColorSwitchWatch Extension";
+			sourceTree = "<group>";
+		};
 		B6B3CEF51F9D77380033F399 = {
 			isa = PBXGroup;
 			children = (
 				B6B3CF001F9D77380033F399 /* ColorSwitch */,
 				B6B3CF151F9D77380033F399 /* ColorSwitchTests */,
 				B6B3CF201F9D77380033F399 /* ColorSwitchUITests */,
+				14C35D5E212DAC88009FA2A3 /* ColorSwitchWatch */,
+				14C35D6D212DAC89009FA2A3 /* ColorSwitchWatch Extension */,
 				B6B3CEFF1F9D77380033F399 /* Products */,
 				B6BEA40A1FA6776200550CF7 /* Frameworks */,
 			);
@@ -134,6 +222,8 @@
 				B6B3CEFE1F9D77380033F399 /* ColorSwitch.app */,
 				B6B3CF121F9D77380033F399 /* ColorSwitchTests.xctest */,
 				B6B3CF1D1F9D77380033F399 /* ColorSwitchUITests.xctest */,
+				14C35D5D212DAC88009FA2A3 /* ColorSwitchWatch.app */,
+				14C35D69212DAC89009FA2A3 /* ColorSwitchWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -192,6 +282,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		14C35D5C212DAC88009FA2A3 /* ColorSwitchWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14C35D7E212DAC8A009FA2A3 /* Build configuration list for PBXNativeTarget "ColorSwitchWatch" */;
+			buildPhases = (
+				14C35D5B212DAC88009FA2A3 /* Resources */,
+				14C35D7D212DAC8A009FA2A3 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14C35D6C212DAC89009FA2A3 /* PBXTargetDependency */,
+			);
+			name = ColorSwitchWatch;
+			productName = ColorSwitchWatch;
+			productReference = 14C35D5D212DAC88009FA2A3 /* ColorSwitchWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		14C35D68212DAC89009FA2A3 /* ColorSwitchWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14C35D7C212DAC8A009FA2A3 /* Build configuration list for PBXNativeTarget "ColorSwitchWatch Extension" */;
+			buildPhases = (
+				14C35D65212DAC89009FA2A3 /* Sources */,
+				14C35D66212DAC89009FA2A3 /* Frameworks */,
+				14C35D67212DAC89009FA2A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ColorSwitchWatch Extension";
+			productName = "ColorSwitchWatch Extension";
+			productReference = 14C35D69212DAC89009FA2A3 /* ColorSwitchWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		B6B3CEFD1F9D77380033F399 /* ColorSwitch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B6B3CF261F9D77380033F399 /* Build configuration list for PBXNativeTarget "ColorSwitch" */;
@@ -199,10 +323,12 @@
 				B6B3CEFA1F9D77380033F399 /* Sources */,
 				B6B3CEFB1F9D77380033F399 /* Frameworks */,
 				B6B3CEFC1F9D77380033F399 /* Resources */,
+				14C35D7F212DAC8A009FA2A3 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				14C35D76212DAC8A009FA2A3 /* PBXTargetDependency */,
 			);
 			name = ColorSwitch;
 			productName = ColorSwitch;
@@ -251,10 +377,18 @@
 		B6B3CEF61F9D77380033F399 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0910;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Zachary Elia";
 				TargetAttributes = {
+					14C35D5C212DAC88009FA2A3 = {
+						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Automatic;
+					};
+					14C35D68212DAC89009FA2A3 = {
+						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Automatic;
+					};
 					B6B3CEFD1F9D77380033F399 = {
 						CreatedOnToolsVersion = 9.1;
 						LastSwiftMigration = 1000;
@@ -295,11 +429,30 @@
 				B6B3CEFD1F9D77380033F399 /* ColorSwitch */,
 				B6B3CF111F9D77380033F399 /* ColorSwitchTests */,
 				B6B3CF1C1F9D77380033F399 /* ColorSwitchUITests */,
+				14C35D5C212DAC88009FA2A3 /* ColorSwitchWatch */,
+				14C35D68212DAC89009FA2A3 /* ColorSwitchWatch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		14C35D5B212DAC88009FA2A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14C35D63212DAC89009FA2A3 /* Assets.xcassets in Resources */,
+				14ED3582212DAE0E005F61E7 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14C35D67212DAC89009FA2A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14C35D73212DAC8A009FA2A3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6B3CEFC1F9D77380033F399 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -327,6 +480,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		14C35D65212DAC89009FA2A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14C35D71212DAC89009FA2A3 /* ExtensionDelegate.swift in Sources */,
+				14C35D6F212DAC89009FA2A3 /* InterfaceController.swift in Sources */,
+				14ED3584212DB524005F61E7 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6B3CEFA1F9D77380033F399 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -361,6 +524,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		14C35D6C212DAC89009FA2A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14C35D68212DAC89009FA2A3 /* ColorSwitchWatch Extension */;
+			targetProxy = 14C35D6B212DAC89009FA2A3 /* PBXContainerItemProxy */;
+		};
+		14C35D76212DAC8A009FA2A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14C35D5C212DAC88009FA2A3 /* ColorSwitchWatch */;
+			targetProxy = 14C35D75212DAC8A009FA2A3 /* PBXContainerItemProxy */;
+		};
 		B6B3CF141F9D77380033F399 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B6B3CEFD1F9D77380033F399 /* ColorSwitch */;
@@ -393,6 +566,86 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		14C35D78212DAC8A009FA2A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79N6W63A8;
+				IBSC_MODULE = ColorSwitchWatch_Extension;
+				INFOPLIST_FILE = ColorSwitchWatch/Info.plist;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ZacharyElia.ColorSwitch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Debug;
+		};
+		14C35D79212DAC8A009FA2A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79N6W63A8;
+				IBSC_MODULE = ColorSwitchWatch_Extension;
+				INFOPLIST_FILE = ColorSwitchWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ZacharyElia.ColorSwitch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Release;
+		};
+		14C35D7A212DAC8A009FA2A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79N6W63A8;
+				INFOPLIST_FILE = "ColorSwitchWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ZacharyElia.ColorSwitch.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.0;
+			};
+			name = Debug;
+		};
+		14C35D7B212DAC8A009FA2A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79N6W63A8;
+				INFOPLIST_FILE = "ColorSwitchWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ZacharyElia.ColorSwitch.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.0;
+			};
+			name = Release;
+		};
 		B6B3CF241F9D77380033F399 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -630,6 +883,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		14C35D7C212DAC8A009FA2A3 /* Build configuration list for PBXNativeTarget "ColorSwitchWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14C35D7A212DAC8A009FA2A3 /* Debug */,
+				14C35D7B212DAC8A009FA2A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14C35D7E212DAC8A009FA2A3 /* Build configuration list for PBXNativeTarget "ColorSwitchWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14C35D78212DAC8A009FA2A3 /* Debug */,
+				14C35D79212DAC8A009FA2A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B6B3CEF91F9D77380033F399 /* Build configuration list for PBXProject "ColorSwitch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
