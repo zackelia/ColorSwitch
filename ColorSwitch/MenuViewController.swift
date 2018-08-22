@@ -37,7 +37,10 @@ class MenuViewController: UIViewController {
             button?.backgroundColor = Color.secondaryColor
             button?.layer.cornerRadius = UI.cornerRadius
         }
-        
+
+        if UserDefaults.standard.string(forKey: "mode") == nil {
+            UserDefaults.standard.set(mode, forKey: "mode")
+        }
         mode = UserDefaults.standard.string(forKey: "mode")!
         modeButton.setTitle(mode.uppercased(), for: UIControl.State.normal)
 

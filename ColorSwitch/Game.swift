@@ -57,6 +57,10 @@ class Game {
     }
 
     func submitHighScore() {
+        if !GKLocalPlayer.localPlayer().isAuthenticated {
+            return
+        }
+
         if high == score {
             let bestScore = GKScore(leaderboardIdentifier: leaderboardID)
             bestScore.value = Int64(high)
@@ -67,6 +71,10 @@ class Game {
     }
 
     func submitAchievements() {
+        if !GKLocalPlayer.localPlayer().isAuthenticated {
+            return
+        }
+        
         var identifiers = ["CS1", "CS2", "CS3", "CS4", "CS5", "CS6", "CS7", "CS8", "CS9"]
         GKAchievement.loadAchievements { (finishedAchievements, error) in
             if error != nil {
