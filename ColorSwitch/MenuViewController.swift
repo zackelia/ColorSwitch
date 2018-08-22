@@ -39,15 +39,15 @@ class MenuViewController: UIViewController {
         }
         
         mode = UserDefaults.standard.string(forKey: "mode")!
-        modeButton.setTitle(mode.uppercased(), for: .normal)
+        modeButton.setTitle(mode.uppercased(), for: UIControl.State.normal)
 
         if UserDefaults.standard.bool(forKey: "sound") {
             shouldPlaySound = true
-            soundButton.setBackgroundImage(UIImage(named: "sound"), for: .normal)
+            soundButton.setBackgroundImage(UIImage(named: "sound"), for: UIControl.State.normal)
         }
         else {
             shouldPlaySound = false
-            soundButton.setBackgroundImage(UIImage(named: "mute"), for: .normal)
+            soundButton.setBackgroundImage(UIImage(named: "mute"), for: UIControl.State.normal)
         }
 
         authenticateLocalPlayer()
@@ -102,7 +102,7 @@ class MenuViewController: UIViewController {
     @IBAction func tappedRate(_ sender: Any) {
         UIBuilder.play(sound: "tap")
         UIBuilder.animatePop(animatedView: rateButton, closure: {
-            UIApplication.shared.openURL(URL(string: Config.URL)!)
+            UIApplication.shared.open(URL(string: Config.URL)!, options: [:], completionHandler: nil)
         })
     }
     

@@ -58,11 +58,11 @@ struct UIBuilder {
         
         UserDefaults.standard.set(newMode, forKey: "mode")
         
-        let attributes = [ NSAttributedStringKey.font: UIFont(name: "Futura", size: 30.0)!,
-                           NSAttributedStringKey.foregroundColor: UIColor.white ]
+        let attributes = [ NSAttributedString.Key.font: UIFont(name: "Futura", size: 30.0)!,
+                           NSAttributedString.Key.foregroundColor: UIColor.white ]
         let attributedString = NSAttributedString(string: currentMode.uppercased(), attributes: attributes)
-        tempButton.setAttributedTitle(attributedString, for: .normal)
-        currentButton.setTitle(newMode.uppercased(), for: .normal)
+        tempButton.setAttributedTitle(attributedString, for: UIControl.State.normal)
+        currentButton.setTitle(newMode.uppercased(), for: UIControl.State.normal)
         
         tempButton.frame.origin.x = currentButton.frame.origin.x + buttonsView.frame.origin.x
         tempButton.frame.origin.y = currentButton.frame.origin.y + buttonsView.frame.origin.y
@@ -87,7 +87,7 @@ struct UIBuilder {
         UIView.animate(withDuration: 0.75) {
             let sound = UserDefaults.standard.bool(forKey: "sound")
             let name = sound ? "mute" : "sound"
-            soundButton.setBackgroundImage(UIImage(named: name), for: .normal)
+            soundButton.setBackgroundImage(UIImage(named: name), for: UIControl.State.normal)
             UserDefaults.standard.set(!sound, forKey: "sound")
             closure()
         }

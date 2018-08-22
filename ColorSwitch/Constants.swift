@@ -9,7 +9,8 @@
 import UIKit
 
 struct Config {
-    static let URL = "itms-apps://appstore.com/zacharyelia/colorswitch"
+//    static let URL = "itms-apps://appstore.com/zacharyelia/colorswitch" 923653602
+    static let URL = "itms-apps://itunes.apple.com/app/id923653602"
 }
 
 struct Color {

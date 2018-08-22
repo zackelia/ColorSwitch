@@ -39,7 +39,7 @@ class LoseViewController: UIViewController {
         }
         
         let mode = UserDefaults.standard.string(forKey: "mode")!
-        modeButton.setTitle(mode.uppercased(), for: .normal)
+        modeButton.setTitle(mode.uppercased(), for: UIControl.State.normal)
 
         let gamesPlayed = UserDefaults.standard.integer(forKey: "gamesPlayed") + 1
         UserDefaults.standard.set(gamesPlayed, forKey: "gamesPlayed")
@@ -51,11 +51,7 @@ class LoseViewController: UIViewController {
             // TODO: Show ads
         }
         else if gamesPlayed > 30 {
-            if #available(iOS 10.3, *) {
-                SKStoreReviewController.requestReview()
-            } else {
-                // Fallback on earlier versions
-            }
+            SKStoreReviewController.requestReview()
         }
     }
     
