@@ -55,7 +55,7 @@ class LoseViewController: UIViewController {
                 Chartboost.cacheInterstitial(CBLocationHomeScreen)
             }
         }
-        else if gamesPlayed > 30 {
+        else if gamesPlayed > 16 && gamesPlayed % 16 == 1 {
             SKStoreReviewController.requestReview()
         }
     }
