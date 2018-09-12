@@ -57,7 +57,7 @@ class Game {
     }
 
     func submitHighScore() {
-        if !GKLocalPlayer.localPlayer().isAuthenticated {
+        if !GKLocalPlayer.local.isAuthenticated {
             return
         }
 
@@ -71,7 +71,7 @@ class Game {
     }
 
     func submitAchievements() {
-        if !GKLocalPlayer.localPlayer().isAuthenticated {
+        if !GKLocalPlayer.local.isAuthenticated {
             return
         }
         
@@ -84,7 +84,7 @@ class Game {
             // Ignore completed achievements
             for achievement in finishedAchievements! {
                 if achievement.isCompleted {
-                    let index = identifiers.index(of: achievement.identifier!)!
+                    let index = identifiers.index(of: achievement.identifier)!
                     identifiers.remove(at: index)
                 }
             }
