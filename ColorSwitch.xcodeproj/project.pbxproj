@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		142D51CA23B26F48004DD75B /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 142D51C923B26F48004DD75B /* Chartboost.framework */; };
+		142D51CC23B26F97004DD75B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 142D51CB23B26F97004DD75B /* AVFoundation.framework */; };
 		1495A622212CF0C400B3F6FC /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1495A621212CF0C400B3F6FC /* Keys.swift */; };
-		1495A629212CF1D300B3F6FC /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1495A627212CF1D200B3F6FC /* Chartboost.framework */; };
-		1495A62A212CF1D300B3F6FC /* CHAMoatMobileAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1495A628212CF1D300B3F6FC /* CHAMoatMobileAppKit.framework */; };
 		149C5F59212CE24200958E3E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 149C5F58212CE24200958E3E /* StoreKit.framework */; };
 		149C5F5B212CE24700958E3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 149C5F5A212CE24700958E3E /* Foundation.framework */; };
 		149C5F5D212CE24C00958E3E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 149C5F5C212CE24C00958E3E /* CoreGraphics.framework */; };
@@ -94,10 +94,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		142D51C923B26F48004DD75B /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Chartboost.framework; sourceTree = "<group>"; };
+		142D51CB23B26F97004DD75B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1495A611212CEEBE00B3F6FC /* ColorSwitch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ColorSwitch-Bridging-Header.h"; sourceTree = "<group>"; };
 		1495A621212CF0C400B3F6FC /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
-		1495A627212CF1D200B3F6FC /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Chartboost.framework; sourceTree = "<group>"; };
-		1495A628212CF1D300B3F6FC /* CHAMoatMobileAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CHAMoatMobileAppKit.framework; sourceTree = "<group>"; };
 		149C5F58212CE24200958E3E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		149C5F5A212CE24700958E3E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		149C5F5C212CE24C00958E3E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -146,11 +146,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				149C5F61212CE25600958E3E /* WebKit.framework in Frameworks */,
-				1495A62A212CF1D300B3F6FC /* CHAMoatMobileAppKit.framework in Frameworks */,
 				149C5F5F212CE25200958E3E /* UIKit.framework in Frameworks */,
 				149C5F5D212CE24C00958E3E /* CoreGraphics.framework in Frameworks */,
-				1495A629212CF1D300B3F6FC /* Chartboost.framework in Frameworks */,
+				142D51CA23B26F48004DD75B /* Chartboost.framework in Frameworks */,
 				149C5F5B212CE24700958E3E /* Foundation.framework in Frameworks */,
+				142D51CC23B26F97004DD75B /* AVFoundation.framework in Frameworks */,
 				149C5F59212CE24200958E3E /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,8 +175,7 @@
 		1495A618212CEF3600B3F6FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1495A628212CF1D300B3F6FC /* CHAMoatMobileAppKit.framework */,
-				1495A627212CF1D200B3F6FC /* Chartboost.framework */,
+				142D51C923B26F48004DD75B /* Chartboost.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -270,6 +269,7 @@
 		B6BEA40A1FA6776200550CF7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				142D51CB23B26F97004DD75B /* AVFoundation.framework */,
 				149C5F60212CE25600958E3E /* WebKit.framework */,
 				149C5F5E212CE25200958E3E /* UIKit.framework */,
 				149C5F5C212CE24C00958E3E /* CoreGraphics.framework */,
