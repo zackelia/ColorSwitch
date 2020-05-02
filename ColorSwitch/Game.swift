@@ -64,9 +64,12 @@ class Game {
         if high == score {
             let bestScore = GKScore(leaderboardIdentifier: leaderboardID)
             bestScore.value = Int64(high)
-            GKScore.report([bestScore], withCompletionHandler: { (error) in
-                print(error!.localizedDescription)
-            })
+            GKScore.report([bestScore]) { (error) in
+                guard error == nil else {
+                    print(error?.localizedDescription ?? "")
+                    return
+                }
+            }
         }
     }
 
