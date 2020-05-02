@@ -84,7 +84,7 @@ class Game {
             // Ignore completed achievements
             for achievement in finishedAchievements! {
                 if achievement.isCompleted {
-                    let index = identifiers.index(of: achievement.identifier)!
+                    let index = identifiers.firstIndex(of: achievement.identifier)!
                     identifiers.remove(at: index)
                 }
             }

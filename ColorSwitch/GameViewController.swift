@@ -95,7 +95,7 @@ class GameViewController: UIViewController {
     }
 
     func swapRandomButtons() {
-        var buttons = [button1, button2, button3, button4]
+        let buttons = [button1, button2, button3, button4]
         let swaps = Int(arc4random_uniform(3) + 1)
         for _ in 0...swaps - 1 {
             let rand1 = Int(arc4random_uniform(4))
