@@ -17,7 +17,7 @@ class MenuViewController: UIViewController {
     @IBOutlet var gamecenterButton: UIButton!
     @IBOutlet var soundButton: UIButton!
     
-    @IBOutlet var buttonsView: UIView!
+    @IBOutlet var buttonsView: UIStackView!
     
     var mode = "Easy"
     var shouldPlaySound: Bool!
@@ -29,10 +29,6 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        view.backgroundColor = Color.primaryColor
-        
-        buttonsView.backgroundColor = .clear
-        
         for button in [startButton, modeButton, rateButton, gamecenterButton, soundButton] {
             button?.backgroundColor = Color.secondaryColor
             button?.layer.cornerRadius = UI.cornerRadius

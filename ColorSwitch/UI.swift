@@ -38,7 +38,7 @@ struct UIBuilder {
         })
     }
 
-    static func changeMode(currentButton: UIButton, currentView: UIView, buttonsView: UIView, sizeClass: UIUserInterfaceSizeClass){
+    static func changeMode(currentButton: UIButton, currentView: UIView, buttonsView: UIStackView, sizeClass: UIUserInterfaceSizeClass){
         let tempButton = UIButton(frame: currentButton.frame)
         tempButton.backgroundColor = Color.secondaryColor
         tempButton.layer.cornerRadius = UI.cornerRadius

@@ -15,8 +15,7 @@ class GameViewController: UIViewController {
     @IBOutlet var button2: UIButton!
     @IBOutlet var button3: UIButton!
     @IBOutlet var button4: UIButton!
-    @IBOutlet var buttonsView: UIView!
-    
+
     @IBOutlet var colorLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var highScoreLabel: UILabel!
@@ -29,10 +28,6 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        view.backgroundColor = Color.primaryColor
-
-        buttonsView.backgroundColor = .clear
-
         button1.backgroundColor = Color.red
         button2.backgroundColor = Color.blue
         button3.backgroundColor = Color.green

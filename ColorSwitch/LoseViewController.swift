@@ -11,7 +11,6 @@ import StoreKit
 
 class LoseViewController: UIViewController {
     
-    @IBOutlet var buttonsView: UIView!
     @IBOutlet var lossLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var highScoreLabel: UILabel!
@@ -20,15 +19,13 @@ class LoseViewController: UIViewController {
     @IBOutlet var modeButton: UIButton!
     @IBOutlet var menuButton: UIButton!
 
+    @IBOutlet var buttonsView: UIStackView!
+
     var game: Game!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        view.backgroundColor = Color.primaryColor
-        
-        buttonsView.backgroundColor = .clear
-        
         lossLabel.text = game.lossMessage
         scoreLabel.text = "Score: \(game.score)".uppercased()
         highScoreLabel.text = "\(game.mode!) High Score: \(game.high!)".uppercased()
