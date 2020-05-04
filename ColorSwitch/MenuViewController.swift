@@ -117,7 +117,6 @@ class MenuViewController: UIViewController {
         let gcVC = GKGameCenterViewController()
         gcVC.gameCenterDelegate = self
         gcVC.viewState = .leaderboards
-        gcVC.leaderboardIdentifier = self.leaderboardID
         self.present(gcVC, animated: true, completion: nil)
     }
 
