@@ -38,9 +38,8 @@ class LoseViewController: UIViewController {
             button?.startAnimatingPressActions()
         }
         
-        let mode = UserDefaults.standard.string(forKey: "mode")!
-        modeButton.setTitle(mode.uppercased(), for: UIControl.State.normal)
-
+        setupMode()
+        
         let gamesPlayed = UserDefaults.standard.integer(forKey: "gamesPlayed") + 1
         UserDefaults.standard.set(gamesPlayed, forKey: "gamesPlayed")
 
@@ -58,6 +57,27 @@ class LoseViewController: UIViewController {
         else if gamesPlayed > 16 && gamesPlayed % 16 == 1 {
             SKStoreReviewController.requestReview()
         }
+    }
+
+    func setupMode() {
+        modeButton.titleLabel?.lineBreakMode = .byWordWrapping
+
+        game.mode = UserDefaults.standard.string(forKey: "mode")!
+
+        var subtitle: String
+        if game.mode == "Easy" {
+            subtitle = "Classic gameplay"
+        } else if game.mode == "Hard" {
+            subtitle = "Faster gameplay with a twist"
+        } else {
+            subtitle = "30 second games"
+        }
+
+        let title = UIBuilder.subtitledString(title: game.mode, subtitle: subtitle, sizeClass: self.traitCollection.horizontalSizeClass)
+
+        //assigning the resultant attributed strings to the button
+        modeButton?.setAttributedTitle(title, for: .normal)
+
     }
     
     override func didReceiveMemoryWarning() {

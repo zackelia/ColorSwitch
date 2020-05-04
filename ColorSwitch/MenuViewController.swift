@@ -42,8 +42,6 @@ class MenuViewController: UIViewController {
         if UserDefaults.standard.string(forKey: "mode") == nil {
             UserDefaults.standard.set(mode, forKey: "mode")
         }
-        mode = UserDefaults.standard.string(forKey: "mode")!
-        modeButton.setTitle(mode.uppercased(), for: UIControl.State.normal)
 
         if UserDefaults.standard.bool(forKey: "sound") {
             shouldPlaySound = true
@@ -64,6 +62,27 @@ class MenuViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    func setupMode() {
+        modeButton.titleLabel?.lineBreakMode = .byWordWrapping
+
+        mode = UserDefaults.standard.string(forKey: "mode")!
+
+        var subtitle: String
+        if mode == "Easy" {
+            subtitle = "Classic gameplay"
+        } else if mode == "Hard" {
+            subtitle = "Faster gameplay with a twist"
+        } else {
+            subtitle = "30 second games"
+        }
+
+        let title = UIBuilder.subtitledString(title: mode, subtitle: subtitle, sizeClass: self.traitCollection.horizontalSizeClass)
+
+        //assigning the resultant attributed strings to the button
+        modeButton?.setAttributedTitle(title, for: .normal)
+
     }
 
     func authenticateLocalPlayer() {
