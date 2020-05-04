@@ -14,6 +14,7 @@ class LoseViewController: UIViewController {
     @IBOutlet var lossLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var highScoreLabel: UILabel!
+    @IBOutlet var modeLabel: UILabel!
     
     @IBOutlet var playAgainButton: UIButton!
     @IBOutlet var modeButton: UIButton!
@@ -26,13 +27,15 @@ class LoseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        lossLabel.text = game.lossMessage
-        scoreLabel.text = "Score: \(game.score)".uppercased()
-        highScoreLabel.text = "\(game.mode!) High Score: \(game.high!)".uppercased()
+        lossLabel.text = game.lossMessage.uppercased()
+        scoreLabel.text = "\(game.score)".uppercased()
+        highScoreLabel.text = "Best: \(game.high!)".uppercased()
+        modeLabel.text = "\(game.mode!)".uppercased()
         
         for button in [playAgainButton, modeButton, menuButton] {
             button?.backgroundColor = Color.secondaryColor
             button?.layer.cornerRadius = UI.cornerRadius
+            button?.startAnimatingPressActions()
         }
         
         let mode = UserDefaults.standard.string(forKey: "mode")!

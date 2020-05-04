@@ -18,6 +18,7 @@ class GameViewController: UIViewController {
 
     @IBOutlet var colorLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet var modeLabel: UILabel!
     @IBOutlet var highScoreLabel: UILabel!
 
     var timer: Timer!
@@ -35,6 +36,7 @@ class GameViewController: UIViewController {
 
         for button in [button1, button2, button3, button4] {
             button?.layer.cornerRadius = UI.cornerRadius
+            button?.startAnimatingPressActions()
         }
 
         let mode = UserDefaults.standard.string(forKey: "mode")!
@@ -44,7 +46,6 @@ class GameViewController: UIViewController {
         timer.invalidate()
 
         updateUI()
-
     }
     
     override func didReceiveMemoryWarning() {
@@ -75,16 +76,17 @@ class GameViewController: UIViewController {
         else {
             UIBuilder.play(sound: "wrong")
             timer.invalidate()
-            game.lossMessage  = "Wrong color!"
+            game.lossMessage  = "Wrong color"
             performSegue(withIdentifier: "lose", sender: nil)
         }
     }
 
     func updateUI() {
-        colorLabel.text = game.getNewWord()
+        colorLabel.text = game.getNewWord().uppercased()
         colorLabel.textColor = game.getNewColor()
-        scoreLabel.text = "Score: \(game.score)".uppercased()
-        highScoreLabel.text = "\(game.mode!) High Score: \(game.high!)".uppercased()
+        scoreLabel.text = "\(game.score)"
+        modeLabel.text = "\(game.mode!)".uppercased()
+        highScoreLabel.text = "Best: \(game.high!)".uppercased()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -114,24 +116,28 @@ class GameViewController: UIViewController {
     
     @objc func timerUpdate() {
         UIBuilder.play(sound: "wrong")
-        game.lossMessage = "You ran out of time!"
+        game.lossMessage = "Ran out of time"
         performSegue(withIdentifier: "lose", sender: nil)
     }
 
     @IBAction func button1Tapped(_ sender: Any) {
         tappedButton(button: button1)
+//        UIBuilder.animatePop(animatedView: button1, closure: {})
     }
     
     @IBAction func button2Tapped(_ sender: Any) {
         tappedButton(button: button2)
+//        UIBuilder.animatePop(animatedView: button2, closure: {})
     }
     
     @IBAction func button3Tapped(_ sender: Any) {
         tappedButton(button: button3)
+//        UIBuilder.animatePop(animatedView: button3, closure: {})
     }
     
     @IBAction func button4Tapped(_ sender: Any) {
         tappedButton(button: button4)
+//        UIBuilder.animatePop(animatedView: button4, closure: {})
     }
 }
 

@@ -10,7 +10,7 @@ import UIKit
 import GameKit
 
 class Game {
-    private let colors = ["Red": Color.red, "Blue": Color.blue, "Green": Color.green, "Yellow": Color.yellow]
+    private let colors = ["RED": Color.red, "BLUE": Color.blue, "GREEN": Color.green, "YELLOW": Color.yellow]
 
     var score = 0
     var high: Int!

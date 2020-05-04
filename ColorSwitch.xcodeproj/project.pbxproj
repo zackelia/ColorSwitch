@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1416B643245FB11F0079AFA2 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1416B642245FB11F0079AFA2 /* UIButtonExtensions.swift */; };
+		1416B645245FB1520079AFA2 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1416B644245FB1520079AFA2 /* ViewControllerExtensions.swift */; };
 		142D51CA23B26F48004DD75B /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 142D51C923B26F48004DD75B /* Chartboost.framework */; };
 		142D51CC23B26F97004DD75B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 142D51CB23B26F97004DD75B /* AVFoundation.framework */; };
 		1495A622212CF0C400B3F6FC /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1495A621212CF0C400B3F6FC /* Keys.swift */; };
@@ -94,6 +96,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1416B642245FB11F0079AFA2 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
+		1416B644245FB1520079AFA2 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
 		142D51C923B26F48004DD75B /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Chartboost.framework; sourceTree = "<group>"; };
 		142D51CB23B26F97004DD75B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1495A611212CEEBE00B3F6FC /* ColorSwitch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ColorSwitch-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -238,6 +242,8 @@
 				B6B3CF081F9D77380033F399 /* Assets.xcassets */,
 				B6E0C8711FA4DA1B00429295 /* Game.swift */,
 				B6B3CF351F9FF1780033F399 /* UI.swift */,
+				1416B642245FB11F0079AFA2 /* UIButtonExtensions.swift */,
+				1416B644245FB1520079AFA2 /* ViewControllerExtensions.swift */,
 				1495A621212CF0C400B3F6FC /* Keys.swift */,
 				B6B3CF2F1F9D79680033F399 /* Constants.swift */,
 				B6B3CF0A1F9D77380033F399 /* LaunchScreen.storyboard */,
@@ -501,7 +507,9 @@
 				B6B3CF021F9D77380033F399 /* AppDelegate.swift in Sources */,
 				B6B3CF301F9D79680033F399 /* Constants.swift in Sources */,
 				B6E0C8741FA5190500429295 /* LoseViewController.swift in Sources */,
+				1416B643245FB11F0079AFA2 /* UIButtonExtensions.swift in Sources */,
 				B6B3CF321F9EBD6B0033F399 /* MenuViewController.swift in Sources */,
+				1416B645245FB1520079AFA2 /* ViewControllerExtensions.swift in Sources */,
 				B6B3CF361F9FF1780033F399 /* UI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

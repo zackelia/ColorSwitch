@@ -18,7 +18,7 @@ class MenuViewController: UIViewController {
     @IBOutlet var soundButton: UIButton!
     
     @IBOutlet var buttonsView: UIStackView!
-    
+
     var mode = "Easy"
     var shouldPlaySound: Bool!
 
@@ -26,12 +26,17 @@ class MenuViewController: UIViewController {
     var gcDefaultLeaderboard: String!
     let leaderboardID = "ColorSwitchLeaderboard"
 
+    let gradient = CAGradientLayer()
+    var gradientSet = [[CGColor]]()
+    var currentGradient: Int = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         for button in [startButton, modeButton, rateButton, gamecenterButton, soundButton] {
             button?.backgroundColor = Color.secondaryColor
             button?.layer.cornerRadius = UI.cornerRadius
+            button?.startAnimatingPressActions()
         }
 
         if UserDefaults.standard.string(forKey: "mode") == nil {
@@ -88,7 +93,7 @@ class MenuViewController: UIViewController {
             }
         }
     }
-        
+
     @IBAction func tappedStart(_ sender: Any) {
         UIBuilder.play(sound: "tap")
     }
@@ -100,36 +105,26 @@ class MenuViewController: UIViewController {
     
     @IBAction func tappedRate(_ sender: Any) {
         UIBuilder.play(sound: "tap")
-        UIBuilder.animatePop(animatedView: rateButton, closure: {
-            UIApplication.shared.open(URL(string: Config.URL)!, options: [:], completionHandler: nil)
-        })
+        UIApplication.shared.open(URL(string: Config.URL)!, options: [:], completionHandler: nil)
     }
-    
+
     @IBAction func tappedGamecenter(_ sender: Any) {
         UIBuilder.play(sound: "tap")
-        UIBuilder.animatePop(animatedView: gamecenterButton, closure: {
-            let gcVC = GKGameCenterViewController()
-            gcVC.gameCenterDelegate = self
-            gcVC.viewState = .leaderboards
-            gcVC.leaderboardIdentifier = self.leaderboardID
-            self.present(gcVC, animated: true, completion: nil)
-        })
+        let gcVC = GKGameCenterViewController()
+        gcVC.gameCenterDelegate = self
+        gcVC.viewState = .leaderboards
+        gcVC.leaderboardIdentifier = self.leaderboardID
+        self.present(gcVC, animated: true, completion: nil)
     }
-    
+
     @IBAction func tappedSound(_ sender: Any) {
         UIBuilder.changeSound(soundButton: soundButton, currentView: view, closure: {
             self.shouldPlaySound = UserDefaults.standard.bool(forKey: "sound")
         })
         UIBuilder.play(sound: "tap")
-        UIBuilder.animatePop(animatedView: soundButton, closure: {
-            // TODO: Implement muting/unmuting
-        })
     }
     
 }
 
-extension MenuViewController: GKGameCenterControllerDelegate {
-    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
-        gameCenterViewController.dismiss(animated: true, completion: nil)
-    }
-}
+
+
