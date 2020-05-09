@@ -11,7 +11,7 @@
 		1416B645245FB1520079AFA2 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1416B644245FB1520079AFA2 /* ViewControllerExtensions.swift */; };
 		142D51CA23B26F48004DD75B /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 142D51C923B26F48004DD75B /* Chartboost.framework */; };
 		142D51CC23B26F97004DD75B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 142D51CB23B26F97004DD75B /* AVFoundation.framework */; };
-		1495A622212CF0C400B3F6FC /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1495A621212CF0C400B3F6FC /* Keys.swift */; };
+		147D300C24662FCC00CCA1C0 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D300B24662FCC00CCA1C0 /* Keys.swift */; };
 		149C5F59212CE24200958E3E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 149C5F58212CE24200958E3E /* StoreKit.framework */; };
 		149C5F5B212CE24700958E3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 149C5F5A212CE24700958E3E /* Foundation.framework */; };
 		149C5F5D212CE24C00958E3E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 149C5F5C212CE24C00958E3E /* CoreGraphics.framework */; };
@@ -100,8 +100,8 @@
 		1416B644245FB1520079AFA2 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
 		142D51C923B26F48004DD75B /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Chartboost.framework; sourceTree = "<group>"; };
 		142D51CB23B26F97004DD75B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		147D300B24662FCC00CCA1C0 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		1495A611212CEEBE00B3F6FC /* ColorSwitch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ColorSwitch-Bridging-Header.h"; sourceTree = "<group>"; };
-		1495A621212CF0C400B3F6FC /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		149C5F58212CE24200958E3E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		149C5F5A212CE24700958E3E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		149C5F5C212CE24C00958E3E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -176,6 +176,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		147D3003246628D300CCA1C0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B6E0C8711FA4DA1B00429295 /* Game.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		147D300424662A5A00CCA1C0 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B6B3CF311F9EBD6B0033F399 /* MenuViewController.swift */,
+				B6B3CF331F9EC52B0033F399 /* GameViewController.swift */,
+				B6E0C8731FA5190500429295 /* LoseViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		147D300624662A9200CCA1C0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B6B3CF011F9D77380033F399 /* AppDelegate.swift */,
+				B6B3CF051F9D77380033F399 /* Main.storyboard */,
+				B6B3CF0A1F9D77380033F399 /* LaunchScreen.storyboard */,
+				1495A611212CEEBE00B3F6FC /* ColorSwitch-Bridging-Header.h */,
+				B6B3CF0D1F9D77380033F399 /* Info.plist */,
+				147D300B24662FCC00CCA1C0 /* Keys.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		147D300724662AB800CCA1C0 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B6B3CF081F9D77380033F399 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		147D300824662B3A00CCA1C0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1416B642245FB11F0079AFA2 /* UIButtonExtensions.swift */,
+				1416B644245FB1520079AFA2 /* ViewControllerExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		147D300924662BDF00CCA1C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		147D300A24662F7200CCA1C0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B6B3CF2F1F9D79680033F399 /* Constants.swift */,
+				B6B3CF351F9FF1780033F399 /* UI.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		1495A618212CEF3600B3F6FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,21 +298,13 @@
 		B6B3CF001F9D77380033F399 /* ColorSwitch */ = {
 			isa = PBXGroup;
 			children = (
-				B6B3CF011F9D77380033F399 /* AppDelegate.swift */,
-				B6B3CF311F9EBD6B0033F399 /* MenuViewController.swift */,
-				B6B3CF331F9EC52B0033F399 /* GameViewController.swift */,
-				B6E0C8731FA5190500429295 /* LoseViewController.swift */,
-				B6B3CF051F9D77380033F399 /* Main.storyboard */,
-				B6B3CF081F9D77380033F399 /* Assets.xcassets */,
-				B6E0C8711FA4DA1B00429295 /* Game.swift */,
-				B6B3CF351F9FF1780033F399 /* UI.swift */,
-				1416B642245FB11F0079AFA2 /* UIButtonExtensions.swift */,
-				1416B644245FB1520079AFA2 /* ViewControllerExtensions.swift */,
-				1495A621212CF0C400B3F6FC /* Keys.swift */,
-				B6B3CF2F1F9D79680033F399 /* Constants.swift */,
-				B6B3CF0A1F9D77380033F399 /* LaunchScreen.storyboard */,
-				1495A611212CEEBE00B3F6FC /* ColorSwitch-Bridging-Header.h */,
-				B6B3CF0D1F9D77380033F399 /* Info.plist */,
+				147D300724662AB800CCA1C0 /* Assets */,
+				147D300824662B3A00CCA1C0 /* Extensions */,
+				147D300A24662F7200CCA1C0 /* Helpers */,
+				147D3003246628D300CCA1C0 /* Models */,
+				147D300624662A9200CCA1C0 /* Supporting Files */,
+				147D300924662BDF00CCA1C0 /* Views */,
+				147D300424662A5A00CCA1C0 /* View Controllers */,
 				1495A618212CEF3600B3F6FC /* Frameworks */,
 			);
 			path = ColorSwitch;
@@ -502,9 +558,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6B3CF341F9EC52B0033F399 /* GameViewController.swift in Sources */,
-				1495A622212CF0C400B3F6FC /* Keys.swift in Sources */,
 				B6E0C8721FA4DA1B00429295 /* Game.swift in Sources */,
 				B6B3CF021F9D77380033F399 /* AppDelegate.swift in Sources */,
+				147D300C24662FCC00CCA1C0 /* Keys.swift in Sources */,
 				B6B3CF301F9D79680033F399 /* Constants.swift in Sources */,
 				B6E0C8741FA5190500429295 /* LoseViewController.swift in Sources */,
 				1416B643245FB11F0079AFA2 /* UIButtonExtensions.swift in Sources */,
@@ -793,14 +849,14 @@
 					"$(PROJECT_DIR)/ColorSwitch",
 					"$(PROJECT_DIR)/ColorSwitch/Frameworks",
 				);
-				INFOPLIST_FILE = ColorSwitch/Info.plist;
+				INFOPLIST_FILE = "ColorSwitch/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ZacharyElia.ColorSwitch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "ColorSwitch/ColorSwitch-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "ColorSwitch/Supporting Files/ColorSwitch-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -822,14 +878,14 @@
 					"$(PROJECT_DIR)/ColorSwitch",
 					"$(PROJECT_DIR)/ColorSwitch/Frameworks",
 				);
-				INFOPLIST_FILE = ColorSwitch/Info.plist;
+				INFOPLIST_FILE = "ColorSwitch/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ZacharyElia.ColorSwitch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "ColorSwitch/ColorSwitch-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "ColorSwitch/Supporting Files/ColorSwitch-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
