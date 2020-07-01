@@ -82,6 +82,7 @@ class Game {
         GKAchievement.loadAchievements { (finishedAchievements, error) in
             if error != nil {
                 print(error?.localizedDescription as Any)
+                return
             }
 
             // Ignore completed achievements
@@ -166,6 +167,7 @@ class Game {
             GKAchievement.report(achievements, withCompletionHandler: { (error) in
                 if error != nil {
                     print(error?.localizedDescription as Any)
+                    return
                 }
             })
         }
