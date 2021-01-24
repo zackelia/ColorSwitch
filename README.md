@@ -1,6 +1,6 @@
 # ColorSwitch
 
-![](https://img.shields.io/badge/Version-3.2.0-blue)
+![](https://img.shields.io/badge/Version-3.3.0-blue)
 
 <img align="left" width="50" height="50" src="icon.png">
 
