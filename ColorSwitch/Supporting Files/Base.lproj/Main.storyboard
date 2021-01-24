@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dsv-Mg-oPU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dsv-Mg-oPU">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -73,7 +73,7 @@
                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="50"/>
                                         </variation>
                                         <connections>
-                                            <action selector="tappedMode:" destination="dsv-Mg-oPU" eventType="touchUpInside" id="6lO-e2-mRX"/>
+                                            <action selector="tappedMode:event:" destination="dsv-Mg-oPU" eventType="touchUpInside" id="88v-dW-fCi"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="B6c-Jf-1O9">
@@ -131,6 +131,7 @@
                                 </variation>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="RxJ-ck-6Nv"/>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9fF-ck-PWH" firstAttribute="leading" secondItem="RxJ-ck-6Nv" secondAttribute="leading" constant="32" id="DMe-rh-6A4"/>
@@ -144,7 +145,6 @@
                             <constraint firstItem="RxJ-ck-6Nv" firstAttribute="trailing" secondItem="9fF-ck-PWH" secondAttribute="trailing" constant="32" id="xMy-ZU-d8v"/>
                             <constraint firstItem="RxJ-ck-6Nv" firstAttribute="trailing" secondItem="ljj-Bd-8Tr" secondAttribute="trailing" constant="32" id="xxx-Tq-lPW"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="RxJ-ck-6Nv"/>
                         <variation key="heightClass=compact-widthClass=compact">
                             <mask key="constraints">
                                 <exclude reference="sMR-sR-RAd"/>
@@ -329,6 +329,7 @@
                                 </variation>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZCY-Nm-vgU"/>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="b6p-Vc-r9D" firstAttribute="leading" secondItem="Y7w-Mf-gh0" secondAttribute="leading" id="7cm-xp-yjB"/>
@@ -352,7 +353,6 @@
                             <constraint firstItem="bNM-w7-EpE" firstAttribute="centerY" secondItem="qZ4-ks-cMp" secondAttribute="centerY" multiplier="1.25" id="tVo-S1-3q8"/>
                             <constraint firstItem="Y7w-Mf-gh0" firstAttribute="centerY" secondItem="qZ4-ks-cMp" secondAttribute="centerY" multiplier="0.58" id="wYY-GZ-Ju0"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ZCY-Nm-vgU"/>
                         <variation key="heightClass=compact-widthClass=compact">
                             <mask key="constraints">
                                 <exclude reference="7eR-AR-wDW"/>
@@ -438,7 +438,7 @@
                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="50"/>
                                         </variation>
                                         <connections>
-                                            <action selector="tappedMode:" destination="Sib-R4-Fg0" eventType="touchUpInside" id="dLB-ES-bgA"/>
+                                            <action selector="tappedMode:event:" destination="Sib-R4-Fg0" eventType="touchUpInside" id="wiF-Ep-2CR"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSm-lD-QKc">
@@ -542,6 +542,7 @@
                                 </variation>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="mZM-w7-q5F"/>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ane-7U-JMT" firstAttribute="centerY" secondItem="11b-ZH-3pJ" secondAttribute="centerY" multiplier="1.33" id="1Tz-ug-ej7"/>
@@ -566,7 +567,6 @@
                             <constraint firstItem="ane-7U-JMT" firstAttribute="centerY" secondItem="11b-ZH-3pJ" secondAttribute="centerY" multiplier="1.25" id="zGF-zE-YqZ"/>
                             <constraint firstItem="ane-7U-JMT" firstAttribute="centerX" secondItem="11b-ZH-3pJ" secondAttribute="centerX" id="zs8-D5-TYy"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="mZM-w7-q5F"/>
                         <variation key="heightClass=compact-widthClass=compact">
                             <mask key="constraints">
                                 <exclude reference="KCJ-Sz-uUd"/>
@@ -614,7 +614,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pay-xs-5A2"/>
+        <segue reference="cSM-nb-L69"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="gamecenter" width="60" height="60"/>

@@ -69,6 +69,8 @@ class LoseViewController: UIViewController {
             subtitle = "Classic gameplay"
         } else if game.mode == "Hard" {
             subtitle = "Faster gameplay with a twist"
+        } else if game.mode == "Insane" {
+            subtitle = "More colors, less time"
         } else {
             subtitle = "30 second games"
         }
@@ -89,9 +91,14 @@ class LoseViewController: UIViewController {
         UIBuilder.play(sound: "tap")
     }
     
-    @IBAction func tappedMode(_ sender: Any) {
+    @IBAction func tappedMode(_ sender: UIButton!, event:UIEvent!) {
         UIBuilder.play(sound: "tap")
-        UIBuilder.changeMode(currentButton: modeButton, currentView: view, buttonsView: buttonsView, sizeClass: self.traitCollection.horizontalSizeClass)
+        let currentTouch: CGPoint = (event.allTouches?.first?.location(in: sender))!
+        var slideLeft = true
+        if currentTouch.x < modeButton.frame.width / 2 {
+            slideLeft = false
+        }
+        UIBuilder.changeMode(slideLeft: slideLeft, currentButton: modeButton, currentView: view, buttonsView: buttonsView, sizeClass: self.traitCollection.horizontalSizeClass)
     }
     
     @IBAction func tappedMenu(_ sender: Any) {

@@ -10,7 +10,8 @@ import UIKit
 import GameKit
 
 class Game {
-    private let colors = ["RED": Color.red, "BLUE": Color.blue, "GREEN": Color.green, "YELLOW": Color.yellow]
+    private var colors = ["RED": Color.red, "BLUE": Color.blue, "GREEN": Color.green, "YELLOW": Color.yellow]
+    var current: [String: UIColor]!
 
     var score = 0
     var high: Int!
@@ -26,31 +27,45 @@ class Game {
     }
 
     func setMode() {
+        current = colors
         switch mode {
         case "Easy":
             timerLength = 2.0
             leaderboardID = "ColorSwitchLeaderboard"
+            colors = ["RED": Color.red, "BLUE": Color.blue, "GREEN": Color.green, "YELLOW": Color.yellow]
         case "Hard":
             timerLength = 1.0
             leaderboardID = "ColorSwitchLeaderboard1"
+            colors = ["RED": Color.red, "BLUE": Color.blue, "GREEN": Color.green, "YELLOW": Color.yellow]
         case "Trial":
             timerLength = 30.0
             leaderboardID = "ColorSwitchLeaderboard2"
+            colors = ["RED": Color.red, "BLUE": Color.blue, "GREEN": Color.green, "YELLOW": Color.yellow]
+        case "Insane":
+            timerLength = 0.8
+            leaderboardID = "ColorSwitchLeaderboard3"
+            colors = ["RED": Color.red, "BLUE": Color.blue, "GREEN": Color.green, "YELLOW": Color.yellow,
+                      "ORANGE": Color.orange, "PINK": Color.pink, "PURPLE": Color.purple, "WHITE": Color.white]
+            current = Dictionary(uniqueKeysWithValues: colors.shuffled()[0...3].map{ ($0.key, $0.value) })
+
         default:
             break
         }
     }
 
     func getNewColor() -> UIColor {
-        return Array(colors.values)[Int(arc4random_uniform(4))]
+        return Array(current.values)[Int(arc4random_uniform(4))]
     }
 
     func getNewWord() -> String {
-        return Array(colors.keys)[Int(arc4random_uniform(4))]
+        return Array(current.keys)[Int(arc4random_uniform(4))]
     }
 
     func didSelectCorrect(chose: UIColor, correct: String) -> Bool {
-        if chose == colors[correct] {
+        if chose == current[correct] {
+            if mode == "Insane" {
+                current = Dictionary(uniqueKeysWithValues: colors.shuffled()[0...3].map{ ($0.key, $0.value) })
+            }
             return true
         }
         return false

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import ColorSwitch
+//@testable import ColorSwitch
 
 class ColorSwitchTests: XCTestCase {
     

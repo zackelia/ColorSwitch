@@ -29,11 +29,6 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        button1.backgroundColor = Color.red
-        button2.backgroundColor = Color.blue
-        button3.backgroundColor = Color.green
-        button4.backgroundColor = Color.yellow
-
         for button in [button1, button2, button3, button4] {
             button?.layer.cornerRadius = UI.cornerRadius
             button?.startAnimatingPressActions()
@@ -45,6 +40,7 @@ class GameViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: game.timerLength, target: self, selector: #selector(self.timerUpdate), userInfo: nil, repeats: false);
         timer.invalidate()
 
+        updateColors()
         updateUI()
     }
     
@@ -65,6 +61,10 @@ class GameViewController: UIViewController {
 
             if game.mode == "Hard" {
                 swapRandomButtons()
+            }
+
+            if game.mode == "Insane" {
+                updateColors()
             }
 
             if game.mode != "Trial" || (game.mode == "Trial" && game.score == 1) {
@@ -106,6 +106,20 @@ class GameViewController: UIViewController {
             let temp = buttons[rand1]?.backgroundColor
             buttons[rand1]?.backgroundColor = buttons[rand2]?.backgroundColor
             buttons[rand2]?.backgroundColor = temp
+        }
+    }
+
+    func updateColors() {
+        if game.mode == "Hard" || game.mode == "Insane" {
+            button1.backgroundColor = Array(game.current)[0].value
+            button2.backgroundColor = Array(game.current)[1].value
+            button3.backgroundColor = Array(game.current)[2].value
+            button4.backgroundColor = Array(game.current)[3].value
+        } else {
+            button1.backgroundColor = Color.red
+            button2.backgroundColor = Color.blue
+            button3.backgroundColor = Color.green
+            button4.backgroundColor = Color.yellow
         }
     }
 

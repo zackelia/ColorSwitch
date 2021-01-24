@@ -74,6 +74,8 @@ class MenuViewController: UIViewController {
             subtitle = "Classic gameplay"
         } else if mode == "Hard" {
             subtitle = "Faster gameplay with a twist"
+        } else if mode == "Insane" {
+            subtitle = "More colors, less time"
         } else {
             subtitle = "30 second games"
         }
@@ -121,9 +123,14 @@ class MenuViewController: UIViewController {
         UIBuilder.play(sound: "tap")
     }
     
-    @IBAction func tappedMode(_ sender: Any) {
+    @IBAction func tappedMode(_ sender: UIButton!, event:UIEvent!) {
         UIBuilder.play(sound: "tap")
-        UIBuilder.changeMode(currentButton: modeButton, currentView: view, buttonsView: buttonsView, sizeClass: self.traitCollection.horizontalSizeClass)
+        let currentTouch: CGPoint = (event.allTouches?.first?.location(in: sender))!
+        var slideLeft = true
+        if currentTouch.x < modeButton.frame.width / 2 {
+            slideLeft = false
+        }
+        UIBuilder.changeMode(slideLeft: slideLeft, currentButton: modeButton, currentView: view, buttonsView: buttonsView, sizeClass: self.traitCollection.horizontalSizeClass)
     }
     
     @IBAction func tappedRate(_ sender: Any) {
@@ -135,7 +142,7 @@ class MenuViewController: UIViewController {
         UIBuilder.play(sound: "tap")
         let gcVC = GKGameCenterViewController()
         gcVC.gameCenterDelegate = self
-        gcVC.viewState = .leaderboards
+        gcVC.viewState = .dashboard
         self.present(gcVC, animated: true, completion: nil)
     }
 

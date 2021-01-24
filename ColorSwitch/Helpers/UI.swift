@@ -75,7 +75,7 @@ struct UIBuilder {
         return attrString1
     }
 
-    static func changeMode(currentButton: UIButton, currentView: UIView, buttonsView: UIStackView, sizeClass: UIUserInterfaceSizeClass){
+    static func changeMode(slideLeft: Bool, currentButton: UIButton, currentView: UIView, buttonsView: UIStackView, sizeClass: UIUserInterfaceSizeClass){
         let tempButton = UIButton(frame: currentButton.frame)
         tempButton.backgroundColor = Color.secondaryColor
         tempButton.layer.cornerRadius = UI.cornerRadius
@@ -88,25 +88,58 @@ struct UIBuilder {
         var oldMode: String
         var oldSubtitle: String
 
-        if currentMode.contains("EASY") {
-            newMode = "Hard"
-            subtitle = "Faster gameplay with a twist"
-            oldMode = "Easy"
-            oldSubtitle = "Classic gameplay"
+        if slideLeft {
+            if currentMode.contains("EASY") {
+                newMode = "Hard"
+                subtitle = "Faster gameplay with a twist"
+                oldMode = "Easy"
+                oldSubtitle = "Classic gameplay"
+            }
+            else if currentMode.contains("HARD") {
+                newMode = "Insane"
+                subtitle = "More colors, less time"
+                oldMode = "Hard"
+                oldSubtitle = "Faster gameplay with a twist"
+            }
+            else if currentMode.contains("INSANE") {
+                newMode = "Trial"
+                subtitle = "30 second games"
+                oldMode = "Insane"
+                oldSubtitle = "More colors, less time"
+            }
+            else {
+                newMode = "Easy"
+                subtitle = "Classic gameplay"
+                oldMode = "Trial"
+                oldSubtitle = "30 second games"
+            }
+        } else {
+            if currentMode.contains("EASY") {
+                newMode = "Trial"
+                subtitle = "30 second games"
+                oldMode = "Easy"
+                oldSubtitle = "Classic gameplay"
+            }
+            else if currentMode.contains("HARD") {
+                newMode = "Easy"
+                subtitle = "Classic gameplay"
+                oldMode = "Hard"
+                oldSubtitle = "Faster gameplay with a twist"
+            }
+            else if currentMode.contains("INSANE") {
+                newMode = "Hard"
+                subtitle = "Faster gameplay with a twist"
+                oldMode = "Insane"
+                oldSubtitle = "More colors, less time"
+            }
+            else {
+                newMode = "Insane"
+                subtitle = "More colors, less time"
+                oldMode = "Trial"
+                oldSubtitle = "30 second games"
+            }
         }
-        else if currentMode.contains("HARD") {
-            newMode = "Trial"
-            subtitle = "30 second games"
-            oldMode = "Hard"
-            oldSubtitle = "Faster gameplay with a twist"
-        }
-        else {
-            newMode = "Easy"
-            subtitle = "Classic gameplay"
-            oldMode = "Trial"
-            oldSubtitle = "30 second games"
-        }
-        
+
         UserDefaults.standard.set(newMode, forKey: "mode")
 
         let tempString = subtitledString(title: oldMode, subtitle: oldSubtitle, sizeClass: sizeClass)
@@ -119,23 +152,42 @@ struct UIBuilder {
         tempButton.setAttributedTitle(tempString, for: .normal)
         currentButton.setAttributedTitle(currentString, for: .normal)
 //        currentButton.setTitle(newMode.uppercased(), for: UIControl.State.normal)
-        
-        tempButton.frame.origin.x = currentButton.frame.origin.x + buttonsView.frame.origin.x
-        tempButton.frame.origin.y = currentButton.frame.origin.y + buttonsView.frame.origin.y
-        currentView.addSubview(tempButton)
-        currentButton.center.x += currentView.bounds.width
-        
-        UIView.animate(withDuration: 0.45, animations: {
-            tempButton.center.x -= currentView.bounds.width
-        }, completion: { finished in
-            tempButton.removeFromSuperview()
-        })
-        
-        UIView.animate(withDuration: 0.45, animations: {
+
+        if slideLeft {
+            tempButton.frame.origin.x = currentButton.frame.origin.x + buttonsView.frame.origin.x
+            tempButton.frame.origin.y = currentButton.frame.origin.y + buttonsView.frame.origin.y
+            currentView.addSubview(tempButton)
+            currentButton.center.x += currentView.bounds.width
+
+            UIView.animate(withDuration: 0.45, animations: {
+                tempButton.center.x -= currentView.bounds.width
+            }, completion: { finished in
+                tempButton.removeFromSuperview()
+            })
+
+            UIView.animate(withDuration: 0.45, animations: {
+                currentButton.center.x -= currentView.bounds.width
+            }, completion: { finished in
+
+            })
+        } else {
+            tempButton.frame.origin.x = currentButton.frame.origin.x + buttonsView.frame.origin.x
+            tempButton.frame.origin.y = currentButton.frame.origin.y + buttonsView.frame.origin.y
+            currentView.addSubview(tempButton)
             currentButton.center.x -= currentView.bounds.width
-        }, completion: { finished in
-            
-        })
+
+            UIView.animate(withDuration: 0.45, animations: {
+                tempButton.center.x += currentView.bounds.width
+            }, completion: { finished in
+                tempButton.removeFromSuperview()
+            })
+
+            UIView.animate(withDuration: 0.45, animations: {
+                currentButton.center.x += currentView.bounds.width
+            }, completion: { finished in
+
+            })
+        }
     }
     
     // TODO: Fix this, it doesn't animate
