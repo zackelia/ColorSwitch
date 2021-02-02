@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		1416B643245FB11F0079AFA2 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1416B642245FB11F0079AFA2 /* UIButtonExtensions.swift */; };
 		1416B645245FB1520079AFA2 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1416B644245FB1520079AFA2 /* ViewControllerExtensions.swift */; };
-		142D51CA23B26F48004DD75B /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 142D51C923B26F48004DD75B /* Chartboost.framework */; };
 		142D51CC23B26F97004DD75B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 142D51CB23B26F97004DD75B /* AVFoundation.framework */; };
+		143D05C625C8D3BD00FA2140 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143D05C525C8D3BD00FA2140 /* Chartboost.framework */; };
 		147D300C24662FCC00CCA1C0 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D300B24662FCC00CCA1C0 /* Keys.swift */; };
 		149C5F59212CE24200958E3E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 149C5F58212CE24200958E3E /* StoreKit.framework */; };
 		149C5F5B212CE24700958E3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 149C5F5A212CE24700958E3E /* Foundation.framework */; };
@@ -98,8 +98,8 @@
 /* Begin PBXFileReference section */
 		1416B642245FB11F0079AFA2 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
 		1416B644245FB1520079AFA2 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
-		142D51C923B26F48004DD75B /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Chartboost.framework; sourceTree = "<group>"; };
 		142D51CB23B26F97004DD75B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		143D05C525C8D3BD00FA2140 /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Chartboost.framework; sourceTree = "<group>"; };
 		147D300B24662FCC00CCA1C0 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		1495A611212CEEBE00B3F6FC /* ColorSwitch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ColorSwitch-Bridging-Header.h"; sourceTree = "<group>"; };
 		149C5F58212CE24200958E3E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -149,10 +149,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				143D05C625C8D3BD00FA2140 /* Chartboost.framework in Frameworks */,
 				149C5F61212CE25600958E3E /* WebKit.framework in Frameworks */,
 				149C5F5F212CE25200958E3E /* UIKit.framework in Frameworks */,
 				149C5F5D212CE24C00958E3E /* CoreGraphics.framework in Frameworks */,
-				142D51CA23B26F48004DD75B /* Chartboost.framework in Frameworks */,
 				149C5F5B212CE24700958E3E /* Foundation.framework in Frameworks */,
 				142D51CC23B26F97004DD75B /* AVFoundation.framework in Frameworks */,
 				149C5F59212CE24200958E3E /* StoreKit.framework in Frameworks */,
@@ -243,7 +243,7 @@
 		1495A618212CEF3600B3F6FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				142D51C923B26F48004DD75B /* Chartboost.framework */,
+				143D05C525C8D3BD00FA2140 /* Chartboost.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";

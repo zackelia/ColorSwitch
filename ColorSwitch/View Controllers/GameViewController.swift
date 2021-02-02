@@ -42,6 +42,10 @@ class GameViewController: UIViewController {
 
         updateColors()
         updateUI()
+
+        if !Ad.interstitial.isCached {
+            Ad.interstitial.cache()
+        }
     }
     
     override func didReceiveMemoryWarning() {

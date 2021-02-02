@@ -18,8 +18,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)
         -> Bool {
         // Override point for customization after application launch.
-        Chartboost.start(withAppId: ChartboostKeys.appID, appSignature: ChartboostKeys.appSignature, delegate: nil)
-        Chartboost.cacheInterstitial(CBLocationHomeScreen)
+        print("Chartboost SDK Version ", Chartboost.getSDKVersion() ?? "")
+
+        Chartboost.addDataUseConsent(.CCPA(.optInSale))
+        Chartboost.addDataUseConsent(.GDPR(.behavioral))
+
+        Chartboost.setLoggingLevel(.info)
+
+        Chartboost.start(withAppId: ChartboostKeys.appID,
+                         appSignature: ChartboostKeys.appSignature) { (success) in
+            print(success ? "Chartboost initialized successfully!" : "Chartboost failed to initialize.")
+            if !Ad.interstitial.isCached {
+                Ad.interstitial.cache()
+            }
+        }
 
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category(rawValue: convertFromAVAudioSessionCategory(AVAudioSession.Category.ambient)), mode: AVAudioSession.Mode.default)

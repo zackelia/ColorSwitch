@@ -47,11 +47,11 @@ class LoseViewController: UIViewController {
         game.submitAchievements()
 
         if gamesPlayed % 4 == 0 && gamesPlayed != 0 {
-            if Chartboost.hasInterstitial(CBLocationHomeScreen) {
-                Chartboost.showInterstitial(CBLocationHomeScreen)
+            if Ad.interstitial.isCached {
+                Ad.interstitial.show(from: self)
             }
             else {
-                Chartboost.cacheInterstitial(CBLocationHomeScreen)
+                Ad.interstitial.cache()
             }
         }
         else if gamesPlayed > 16 && gamesPlayed % 16 == 1 {

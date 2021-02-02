@@ -31,3 +31,6 @@ struct UI {
     static let cornerRadius : CGFloat = 10.0
 }
 
+struct Ad {
+    static var interstitial: CHBInterstitial = CHBInterstitial(location: CBLocationHomeScreen, delegate: nil)
+}
