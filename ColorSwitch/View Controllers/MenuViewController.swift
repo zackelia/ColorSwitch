@@ -52,8 +52,6 @@ class MenuViewController: UIViewController {
             soundButton.setBackgroundImage(UIImage(named: "mute"), for: UIControl.State.normal)
         }
 
-        Chartboost.setMuted(!shouldPlaySound)
-
         setupMode()
 
         authenticateLocalPlayer()

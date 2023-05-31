@@ -197,7 +197,6 @@ struct UIBuilder {
             let name = sound ? "mute" : "sound"
             soundButton.setBackgroundImage(UIImage(named: name), for: UIControl.State.normal)
             UserDefaults.standard.set(!sound, forKey: "sound")
-            Chartboost.setMuted(sound)
             closure()
         }
     }

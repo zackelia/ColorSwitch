@@ -8,6 +8,9 @@
 
 import UIKit
 import AVFoundation
+import UnityAds
+import AppTrackingTransparency
+import AdSupport
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,20 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)
         -> Bool {
         // Override point for customization after application launch.
-        print("Chartboost SDK Version ", Chartboost.getSDKVersion() ?? "")
-
-        Chartboost.addDataUseConsent(.CCPA(.optInSale))
-        Chartboost.addDataUseConsent(.GDPR(.behavioral))
-
-        Chartboost.setLoggingLevel(.info)
-
-        Chartboost.start(withAppId: ChartboostKeys.appID,
-                         appSignature: ChartboostKeys.appSignature) { (success) in
-            print(success ? "Chartboost initialized successfully!" : "Chartboost failed to initialize.")
-            if !Ad.interstitial.isCached {
-                Ad.interstitial.cache()
-            }
-        }
+        UnityAds.initialize(UnityKeys.appID)//, testMode: true)
 
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category(rawValue: convertFromAVAudioSessionCategory(AVAudioSession.Category.ambient)), mode: AVAudioSession.Mode.default)
@@ -60,6 +50,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        if #available(iOS 14, *) {
+            if ATTrackingManager.trackingAuthorizationStatus == .notDetermined {
+                ATTrackingManager.requestTrackingAuthorization { status in
+                    switch status {
+                        case .authorized:
+                            // Tracking authorization dialog was shown
+                            // and we are authorized
+                            print("Authorized")
+                            // Now that we are authorized we can get the IDFA
+                            print(ASIdentifierManager.shared().advertisingIdentifier)
+                        case .denied:
+                            // Tracking authorization dialog was
+                            // shown and permission is denied
+                            print("Denied")
+                        case .notDetermined:
+                            // Tracking authorization dialog has not been shown
+                            print("Not Determined")
+                        case .restricted:
+                            print("Restricted")
+                        @unknown default:
+                            print("Unknown")
+                    }
+                }
+            }
+            else if ATTrackingManager.trackingAuthorizationStatus == .authorized
+            {
+                print("Advertising identifier: \(ASIdentifierManager.shared().advertisingIdentifier)")
+            }
+            else {
+                print("Authorization status: \(ATTrackingManager.trackingAuthorizationStatus.rawValue)")
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+        
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

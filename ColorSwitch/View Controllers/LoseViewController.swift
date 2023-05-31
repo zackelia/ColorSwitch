@@ -8,8 +8,45 @@
 
 import UIKit
 import StoreKit
+import UnityAds
 
-class LoseViewController: UIViewController {
+class LoseViewController: UIViewController,
+                          UnityAdsInitializationDelegate,
+                          UnityAdsLoadDelegate,
+                          UnityAdsShowDelegate {
+    func initializationComplete() {
+        print("Unity: init complete")
+    }
+    
+    func initializationFailed(_ error: UnityAdsInitializationError, withMessage message: String) {
+        print("Unity: init failed")
+    }
+    
+    func unityAdsAdLoaded(_ placementId: String) {
+        print("Unity: ad loaded")
+        Ad.loaded = true
+    }
+    
+    func unityAdsAdFailed(toLoad placementId: String, withError error: UnityAdsLoadError, withMessage message: String) {
+        print("Unity: ad failed")
+    }
+    
+    func unityAdsShowComplete(_ placementId: String, withFinish state: UnityAdsShowCompletionState) {
+        print("Unity: ad show complete")
+    }
+    
+    func unityAdsShowFailed(_ placementId: String, withError error: UnityAdsShowError, withMessage message: String) {
+        print("Unity: ad show failed")
+    }
+    
+    func unityAdsShowStart(_ placementId: String) {
+        print("Unity: ad show start")
+    }
+    
+    func unityAdsShowClick(_ placementId: String) {
+        print("Unity: ad show click")
+    }
+    
     
     @IBOutlet var lossLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
@@ -46,13 +83,13 @@ class LoseViewController: UIViewController {
         game.submitHighScore()
         game.submitAchievements()
 
-        if gamesPlayed % 4 == 0 && gamesPlayed != 0 {
-            if Ad.interstitial.isCached {
-                Ad.interstitial.show(from: self)
-            }
-            else {
-                Ad.interstitial.cache()
-            }
+        if !Ad.loaded {
+            UnityAds.load("Interstitial_iOS", loadDelegate: self)
+        }
+        
+        if gamesPlayed % 4 == 0 && gamesPlayed != 0 && Ad.loaded {
+            UnityAds.show(self, placementId: "Interstitial_iOS", showDelegate: self)
+            Ad.loaded = false
         }
         else if gamesPlayed > 16 && gamesPlayed % 16 == 1 {
             SKStoreReviewController.requestReview()

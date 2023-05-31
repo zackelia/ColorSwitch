@@ -32,5 +32,5 @@ struct UI {
 }
 
 struct Ad {
-    static var interstitial: CHBInterstitial = CHBInterstitial(location: CBLocationHomeScreen, delegate: nil)
+    static var loaded: Bool = false
 }
