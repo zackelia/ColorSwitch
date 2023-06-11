@@ -1,10 +1,10 @@
 # ColorSwitch
 
-![](https://img.shields.io/badge/Version-3.3.2-blue)
+![](https://img.shields.io/badge/Version-3.4.0-blue)
 
 <img align="left" width="50" height="50" src="icon.png">
 
-[ColorSwitch](http://appstore.com/zacharyelia/colorswitch) is an iOS app written in Swift released in 2014. It is a fast-paced brain teaser based off of the [Stroop Effect](https://en.wikipedia.org/wiki/Stroop_effect). Since its release, it has amassed over **150,000** downloads from countries around the world.
+[ColorSwitch](https://apps.apple.com/us/app/colorswitch/id923653602) is an iOS/watchOS app written in Swift released in 2014. It is a fast-paced brain teaser based off of the [Stroop Effect](https://en.wikipedia.org/wiki/Stroop_effect). Since its release, it has amassed over **500,000** downloads from countries around the world.
 
 > In psychology, the Stroop effect is a demonstration of cognitive interference where a delay in the reaction time of a task occurs due to a mismatch in stimuli.
 
