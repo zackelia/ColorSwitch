@@ -138,9 +138,8 @@ class MenuViewController: UIViewController {
 
     @IBAction func tappedGamecenter(_ sender: Any) {
         UIBuilder.play(sound: "tap")
-        let gcVC = GKGameCenterViewController()
+        let gcVC = GKGameCenterViewController(state: .dashboard)
         gcVC.gameCenterDelegate = self
-        gcVC.viewState = .dashboard
         self.present(gcVC, animated: true, completion: nil)
     }
 

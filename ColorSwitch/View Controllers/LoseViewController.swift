@@ -92,7 +92,11 @@ class LoseViewController: UIViewController,
             Ad.loaded = false
         }
         else if gamesPlayed > 16 && gamesPlayed % 16 == 1 {
-            SKStoreReviewController.requestReview()
+            if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+                DispatchQueue.main.async {
+                    SKStoreReviewController.requestReview(in: scene)
+                }
+            }
         }
     }
 

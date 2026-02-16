@@ -77,12 +77,9 @@ class Game {
         }
 
         if high == score {
-            let bestScore = GKScore(leaderboardIdentifier: leaderboardID)
-            bestScore.value = Int64(high)
-            GKScore.report([bestScore]) { (error) in
-                guard error == nil else {
-                    print(error?.localizedDescription ?? "")
-                    return
+            GKLeaderboard.submitScore(Int(high), context: 0, player: GKLocalPlayer.local, leaderboardIDs: [leaderboardID]) { (error) in
+                if let error = error {
+                    print("Error: \(error.localizedDescription)")
                 }
             }
         }

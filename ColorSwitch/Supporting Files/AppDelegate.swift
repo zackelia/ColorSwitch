@@ -50,41 +50,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        if #available(iOS 14, *) {
-            if ATTrackingManager.trackingAuthorizationStatus == .notDetermined {
-                ATTrackingManager.requestTrackingAuthorization { status in
-                    switch status {
-                        case .authorized:
-                            // Tracking authorization dialog was shown
-                            // and we are authorized
-                            print("Authorized")
-                            // Now that we are authorized we can get the IDFA
-                            print(ASIdentifierManager.shared().advertisingIdentifier)
-                        case .denied:
-                            // Tracking authorization dialog was
-                            // shown and permission is denied
-                            print("Denied")
-                        case .notDetermined:
-                            // Tracking authorization dialog has not been shown
-                            print("Not Determined")
-                        case .restricted:
-                            print("Restricted")
-                        @unknown default:
-                            print("Unknown")
-                    }
+        if ATTrackingManager.trackingAuthorizationStatus == .notDetermined {
+            ATTrackingManager.requestTrackingAuthorization { status in
+                switch status {
+                    case .authorized:
+                        // Tracking authorization dialog was shown
+                        // and we are authorized
+                        print("Authorized")
+                        // Now that we are authorized we can get the IDFA
+                        print(ASIdentifierManager.shared().advertisingIdentifier)
+                    case .denied:
+                        // Tracking authorization dialog was
+                        // shown and permission is denied
+                        print("Denied")
+                    case .notDetermined:
+                        // Tracking authorization dialog has not been shown
+                        print("Not Determined")
+                    case .restricted:
+                        print("Restricted")
+                    @unknown default:
+                        print("Unknown")
                 }
             }
-            else if ATTrackingManager.trackingAuthorizationStatus == .authorized
-            {
-                print("Advertising identifier: \(ASIdentifierManager.shared().advertisingIdentifier)")
-            }
-            else {
-                print("Authorization status: \(ATTrackingManager.trackingAuthorizationStatus.rawValue)")
-            }
-        } else {
-            // Fallback on earlier versions
         }
-        
+        else if ATTrackingManager.trackingAuthorizationStatus == .authorized
+        {
+            print("Advertising identifier: \(ASIdentifierManager.shared().advertisingIdentifier)")
+        }
+        else {
+            print("Authorization status: \(ATTrackingManager.trackingAuthorizationStatus.rawValue)")
+        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
