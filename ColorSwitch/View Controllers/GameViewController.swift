@@ -36,7 +36,6 @@ class GameViewController: UIViewController {
 
         let mode = UserDefaults.standard.string(forKey: "mode")!
         game = Game(mode: mode)
-
         timer = Timer.scheduledTimer(timeInterval: game.timerLength, target: self, selector: #selector(self.timerUpdate), userInfo: nil, repeats: false);
         timer.invalidate()
 
@@ -50,6 +49,7 @@ class GameViewController: UIViewController {
     }
 
     func tappedButton(button: UIButton) {
+        game.total += 1
         if game.didSelectCorrect(chose: button.backgroundColor!, correct: colorLabel.text!) {
             UIBuilder.play(sound: "correct")
             game.score += 1
@@ -67,7 +67,7 @@ class GameViewController: UIViewController {
                 updateColors()
             }
 
-            if game.mode != "Trial" || (game.mode == "Trial" && game.score == 1) {
+            if (game.mode != "Trial" && game.mode != "Training") || (game.score == 1) {
                 resetTimer()
             }
 
@@ -75,6 +75,12 @@ class GameViewController: UIViewController {
         }
         else {
             UIBuilder.play(sound: "wrong")
+
+            if game.mode == "Training" {
+                updateUI()  // No wrong answers in training mode. Try again.
+                return
+            }
+
             timer.invalidate()
             game.lossMessage  = "Wrong color"
             performSegue(withIdentifier: "lose", sender: nil)
@@ -85,6 +91,9 @@ class GameViewController: UIViewController {
         colorLabel.text = game.getNewWord().uppercased()
         colorLabel.textColor = game.getNewColor()
         scoreLabel.text = "\(game.score)"
+        if game.mode == "Training" {
+            scoreLabel.text! += "/\(game.total)"
+        }
         modeLabel.text = "\(game.mode!)".uppercased()
         highScoreLabel.text = "Best: \(game.high!)".uppercased()
     }

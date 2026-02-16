@@ -14,6 +14,7 @@ class Game {
     var current: [String: UIColor]!
 
     var score = 0
+    var total = 0
     var high: Int!
     var mode: String!
     var leaderboardID: String!
@@ -47,9 +48,13 @@ class Game {
             colors = ["RED": Color.red, "BLUE": Color.blue, "GREEN": Color.green, "YELLOW": Color.yellow,
                       "ORANGE": Color.orange, "PINK": Color.pink, "PURPLE": Color.purple, "WHITE": Color.white]
             current = Dictionary(uniqueKeysWithValues: colors.shuffled()[0...3].map{ ($0.key, $0.value) })
+        case "Training":
+            timerLength = 30.0
+            leaderboardID = nil
+            colors = ["RED": Color.red, "BLUE": Color.blue, "GREEN": Color.green, "YELLOW": Color.yellow]
 
         default:
-            break
+            assertionFailure("Unimplemented mode: \(mode!)")
         }
     }
 
@@ -74,6 +79,10 @@ class Game {
     func submitHighScore() {
         if !GKLocalPlayer.local.isAuthenticated {
             return
+        }
+
+        if leaderboardID == nil {
+            return  // No leaderboard for this game mode.
         }
 
         if high == score {

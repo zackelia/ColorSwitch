@@ -107,16 +107,22 @@ struct UIBuilder {
                 oldMode = "Insane"
                 oldSubtitle = "More colors, less time"
             }
-            else {
-                newMode = "Easy"
-                subtitle = "Classic gameplay"
+            else if currentMode.contains("TRIAL") {
+                newMode = "Training"
+                subtitle = "30 seconds, no wrong answers"
                 oldMode = "Trial"
                 oldSubtitle = "30 second games"
             }
+            else {
+                newMode = "Easy"
+                subtitle = "Classic gameplay"
+                oldMode = "Training"
+                oldSubtitle = "30 seconds, no wrong answers"
+            }
         } else {
             if currentMode.contains("EASY") {
-                newMode = "Trial"
-                subtitle = "30 second games"
+                newMode = "Training"
+                subtitle = "30 seconds, no wrong answers"
                 oldMode = "Easy"
                 oldSubtitle = "Classic gameplay"
             }
@@ -132,11 +138,17 @@ struct UIBuilder {
                 oldMode = "Insane"
                 oldSubtitle = "More colors, less time"
             }
-            else {
+            else if currentMode.contains("TRIAL") {
                 newMode = "Insane"
                 subtitle = "More colors, less time"
                 oldMode = "Trial"
                 oldSubtitle = "30 second games"
+            }
+            else {
+                newMode = "Trial"
+                subtitle = "30 second games"
+                oldMode = "Training"
+                oldSubtitle = "30 seconds, no wrong answers"
             }
         }
 

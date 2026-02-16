@@ -74,8 +74,10 @@ class MenuViewController: UIViewController {
             subtitle = "Faster gameplay with a twist"
         } else if mode == "Insane" {
             subtitle = "More colors, less time"
-        } else {
+        } else if mode == "Trial" {
             subtitle = "30 second games"
+        } else {
+            subtitle = "30 seconds, no wrong answers"
         }
 
         let title = UIBuilder.subtitledString(title: mode, subtitle: subtitle, sizeClass: self.traitCollection.horizontalSizeClass)

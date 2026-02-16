@@ -66,6 +66,9 @@ class LoseViewController: UIViewController,
         // Do any additional setup after loading the view, typically from a nib.
         lossLabel.text = game.lossMessage.uppercased()
         scoreLabel.text = "\(game.score)".uppercased()
+        if game.mode == "Training" {
+            scoreLabel.text! += "/\(game.total)"
+        }
         highScoreLabel.text = "Best: \(game.high!)".uppercased()
         modeLabel.text = "\(game.mode!)".uppercased()
         
@@ -112,8 +115,10 @@ class LoseViewController: UIViewController,
             subtitle = "Faster gameplay with a twist"
         } else if game.mode == "Insane" {
             subtitle = "More colors, less time"
-        } else {
+        } else if game.mode == "Trial" {
             subtitle = "30 second games"
+        } else {
+            subtitle = "30 seconds, no wrong answers"
         }
 
         let title = UIBuilder.subtitledString(title: game.mode, subtitle: subtitle, sizeClass: self.traitCollection.horizontalSizeClass)
