@@ -19,7 +19,9 @@ struct UIBuilder {
         if let asset = NSDataAsset(name: sound) {
             do {
                 player = try AVAudioPlayer(data: asset.data, fileTypeHint: "wav")
-                player?.play()
+                DispatchQueue.global().async {
+                    player?.play()
+                }
             } catch let error {
                 print(error.localizedDescription)
             }
